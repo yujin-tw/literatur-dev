@@ -292,6 +292,9 @@ $z-index-giftcard-code: 5;
 
   .#{$grid-breakpoint-type}text-center {
     text-align: center !important;
+    @include media-query(mobile){
+      text-align: left !important;
+    }
   }
 }
 
@@ -5461,6 +5464,9 @@ button {
 
 #shopify-section-collection-template{
   margin: 0 0 6rem 5rem;
+  @include media-query(mobile){
+    margin: 0 0 6rem 0;
+  }
 }
 
 .collection-description{
@@ -5503,7 +5509,13 @@ button {
   letter-spacing: .03em;
   line-height: 1.5em;
   width: clamp(25ch, 100%, 70ch);
-  margin: 0 0 9rem 0; 
+  margin: 0 0 9rem 0;
+}
+
+.product-single__description .rte p{
+  @include media-query(mobile){
+    text-align: left !important;
+  }
 }
 
 .product-single__quantity{
@@ -5581,6 +5593,17 @@ button {
 .shopify-payment-button .shopify-payment-button__button--unbranded{
   margin-top: 1rem;
   border-radius: 2rem;
+}
+
+#MainContent{
+  @include media-query(mobile){
+    flex-flow: column nowrap;
+    padding: 0 .5em 0 3em;
+  }
+}
+
+.simple-translate-panel{
+  display: none;
 }
 
 .site-footer {
