@@ -105,7 +105,7 @@
 }
 
 .translation-lab-language-options .language-option.active {
-  border-bottom: 1px solid;
+  border-bottom: 0px solid;
 }
 
 .translation-lab-language-options .language-option:hover {
