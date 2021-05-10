@@ -292,6 +292,9 @@ $z-index-giftcard-code: 5;
 
   .#{$grid-breakpoint-type}text-center {
     text-align: center !important;
+    @include media-query(mobile){
+      text-align: left !important;
+    }
   }
 }
 
@@ -5417,7 +5420,7 @@ button {
 .medium-up--four-fifths{
   width: 70%;
   @include media-query(mobile){
-    width: 100%;
+    width: 99%;
     display: flex;
     justify-content: space-between;
   }
@@ -5461,6 +5464,9 @@ button {
 
 #shopify-section-collection-template{
   margin: 0 0 6rem 5rem;
+  @include media-query(mobile){
+    margin: 0 0 6rem 0;
+  }
 }
 
 .collection-description{
@@ -5503,7 +5509,13 @@ button {
   letter-spacing: .03em;
   line-height: 1.5em;
   width: clamp(25ch, 100%, 70ch);
-  margin: 0 0 9rem 0; 
+  margin: 0 0 9rem 0;
+}
+
+.product-single__description .rte p{
+  @include media-query(mobile){
+    text-align: left !important;
+  }
 }
 
 .product-single__quantity{
@@ -5583,6 +5595,17 @@ button {
   border-radius: 2rem;
 }
 
+#MainContent{
+  @include media-query(mobile){
+    flex-flow: column nowrap;
+    padding: 0 .5em 0 3em;
+  }
+}
+
+.simple-translate-panel{
+  display: none;
+}
+
 .site-footer {
   position: relative;
   font-family: 'gt_flexaextended_light', sans-serif;
@@ -5592,12 +5615,25 @@ button {
   padding: 5rem;
   font-size: 0.875rem;
   z-index: 1000;
+  @include media-query(mobile){
+    padding: 0;
+  }
 }
 
-.site-footer__row {
+.site-footer__row-1 {
   display: flex;
   justify-content: space-between;
   padding: 2rem 0;
+  @include media-query(mobile){
+    flex-flow: column nowrap;
+  }
+}
+
+.site-footer__row-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  flex-flow: row wrap;
 }
 
 .site-footer__wrapper {
@@ -5606,6 +5642,9 @@ button {
 
 .site-footer__sponsor-box {
   width: 75%;
+  @include media-query(mobile){
+    width: 100%
+  }
 }
 
 .sponsor-logos {
@@ -5615,9 +5654,16 @@ button {
   display: flex;
   flex-flow: row wrap;
   list-style: none;
+  @include media-query(mobile){
+    padding-left: 1.5rem;
+  }
 }
 .sponsor-logos ul li {
   padding: 0 4rem 2rem 0;
+  @include media-query(mobile){
+    padding: 0 2em 2em 0;
+    width: 50%;
+  }
 }
 .sponsor-logos ul li img {
   height: 5rem;
@@ -5627,6 +5673,10 @@ button {
   line-height: 1.2em;
   flex: 0 0 16.666%;
   padding: 0 1rem 1rem;
+  @include media-query(mobile){
+    padding: 0 2rem 1rem;
+    font-size: 1.33em;
+  }
 }
 .site-footer__social-media ul {
   margin-top: 0.45em;
@@ -5647,6 +5697,9 @@ button {
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
+  @include media-query(mobile){
+    flex-direction: column;
+  }
 }
 
 .site-footer__contact-information {
@@ -5656,6 +5709,11 @@ button {
   justify-content: space-between;
   width: 45%;
   padding-left: 4rem;
+  @include media-query(mobile){
+    flex-flow: row nowrap;
+    width: 100%;
+    padding: 0 1rem 0;
+  }
 }
 
 .festival-logo {
@@ -5682,4 +5740,8 @@ button {
   right: 0;
   color: #707070;
   padding: 1.25em;
+  @include media-query(mobile){
+    position: relative;
+    padding: 4rem 1.25rem 0;
+  }
 }
